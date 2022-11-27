@@ -1,0 +1,21 @@
+@charset "utf-8";
+/* CSS Document */
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  width: 100%;
+  border: 1px solid #ddd;
+
+  text-align: center;
+}
+
+.form-select {
+  width: 10em;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+
