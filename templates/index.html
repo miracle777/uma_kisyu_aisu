@@ -6,10 +6,10 @@
 
     {% block content %}
     <h1>画数を調べて九星の相性を調べます。</h1>
-    <form action="{{ url_for('kakusu_valu2') }}" method="post">
+    <form action="{{ url_for('kakusu_select') }}" method="POST">
     <div class="row mt-3 mb-3">
       <div class="nen col-sm">
-      <h2>今年の九星は</h2>
+      <h2>鑑定する年の九星は</h2>
         <select class="form-select" aria-label="Default select example" name="kusei_nen">
           <option value="1">一白水星</option>
           <option value="2">二黒土星</option>
@@ -23,7 +23,7 @@
         </select>
         </div>
       <div class="mon_day col-sm">
-      <h2>今月の九星は</h2>
+      <h2>鑑定する月の九星は</h2>
         <select class="form-select" aria-label="Default select example" name="kusei_tuki">
           <option value="1">一白水星</option>
           <option value="2">二黒土星</option>
@@ -37,7 +37,7 @@
         </select>
         </div>
       <div class="day_div col-sm">         
-      <h2>今日の九星は</h2>
+      <h2>鑑定日の九星は</h2>
         <select class="form-select" aria-label="Default select example" name="kusei_hi">
           <option value="1">一白水星</option>
           <option value="2">二黒土星</option>
@@ -52,53 +52,22 @@
         </div>
     </div> 
 
-      <div class="umafrom mb-3" >
-        <h2>馬の名前を入力してください</h2>
-        <p>カタカタで、馬の名前を入力してください。</p>
-        <p>&ensp;1:<input type="text" name="uma1" size="20" /></p>
-        <p>&ensp;2:<input type="text" name="uma2" size="20" /></p>
-        <p>&ensp;3:<input type="text" name="uma3" size="20" /></p>
-        <p>&ensp;4:<input type="text" name="uma4" size="20" /></p>
-        <p>&ensp;5:<input type="text" name="uma5" size="20" /></p>
-        <p>&ensp;6:<input type="text" name="uma6" size="20" /></p>
-        <p>&ensp;7:<input type="text" name="uma7" size="20" /></p>
-        <p>&ensp;8:<input type="text" name="uma8" size="20" /></p>
-        <p>&ensp;9:<input type="text" name="uma9" size="20" /></p>
-        <p>10:<input type="text" name="uma10" size="20" /></p>
-        <p>11:<input type="text" name="uma11" size="20" /></p>
-        <p>12:<input type="text" name="uma12" size="20" /></p>
-        <p>13:<input type="text" name="uma13" size="20" /></p>
-        <p>14:<input type="text" name="uma14" size="20" /></p>
-        <p>15:<input type="text" name="uma15" size="20" /></p>
-        <p>16:<input type="text" name="uma16" size="20" /></p>
-        <p>17:<input type="text" name="uma17" size="20" /></p>
-        <p>18:<input type="text" name="uma18" size="20" /></p>
+    <div class="select_form col-sm">
+      <h2>何から入力しますか</h2>
+      <div class="select_form_p">
+        <label for="r1">
+          <input type="radio" id="r1" name="select_form_id" value="kisyu" required>騎手名（選手名)&nbsp;&nbsp;
+        </label>
+        <label for="r2">
+          <input type="radio" id="r2" name="select_form_id" value="uma" required>馬名
+        </label>
       </div>
 
-      <div class="kisyuform mb-3">
-        <h2>騎手の名前を入力してください</h2>
-        <p>漢字、カタカナ、”ー”と”・”が入力できます。</p>
-        <p>&ensp;1:<input type="text" name="kisyu1" size="20" /></p>
-        <p>&ensp;2:<input type="text" name="kisyu2" size="20" /></p>
-        <p>&ensp;3:<input type="text" name="kisyu3" size="20" /></p>
-        <p>&ensp;4:<input type="text" name="kisyu4" size="20" /></p>
-        <p>&ensp;5:<input type="text" name="kisyu5" size="20" /></p>
-        <p>&ensp;6:<input type="text" name="kisyu6" size="20" /></p>
-        <p>&ensp;7:<input type="text" name="kisyu7" size="20" /></p>
-        <p>&ensp;8:<input type="text" name="kisyu8" size="20" /></p>
-        <p>&ensp;9:<input type="text" name="kisyu9" size="20" /></p>
-        <p>10:<input type="text" name="kisyu10" size="20" /></p>
-        <p>11:<input type="text" name="kisyu11" size="20" /></p>
-        <p>12:<input type="text" name="kisyu12" size="20" /></p>
-        <p>13:<input type="text" name="kisyu13" size="20" /></p>
-        <p>14:<input type="text" name="kisyu14" size="20" /></p>
-        <p>15:<input type="text" name="kisyu15" size="20" /></p>
-        <p>16:<input type="text" name="kisyu16" size="20" /></p>
-        <p>17:<input type="text" name="kisyu17" size="20" /></p>
-        <p>18:<input type="text" name="kisyu18" size="20" /></p>
-      </div>
+    </div>
 
+    <div class="btn_submit">
       <button type="submit" class="btn btn-primary">送信</button>
+    </div> 
     </form>
         <script type="text/javascript">
           hantei();

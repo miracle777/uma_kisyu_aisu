@@ -1,0 +1,44 @@
+{% extends 'base.html' %} {% block head %}
+<title>画数調べ</title>
+<script type="text/javascript" src="/static/js/hantei.js"></script>
+{% endblock %} {% block content %}
+<h1>画数を調べて九星の相性を調べます。</h1>
+<table>
+  <thead>
+    <tr>
+      <th scope="col">九星</th>
+      <th scope="col">今年の相性<br />{{ data_kusei[0] }}</th>
+      <th scope="col">今月の相性<br />{{ data_kusei[1] }}</th>
+      <th scope="col">今日の相性<br />{{ data_kusei[2] }}</th>
+    </tr>
+  </thead>
+  <tbody></tbody>
+</table>
+
+<form action="{{ url_for('kisyu_form') }}" method="post">
+  <div class="kisyuform mb-3">
+    <h2>騎手の名前を入力してください</h2>
+    <p>漢字、カタカナ、空白、”ー”と”・”が入力できます。</p>
+    <p>外国人の名前は、カタカナの正式名称で入力してください。</p>
+    {% for x in range(1, 19) %}
+      <div class="form_txt">
+        <div class="form_label">&nbsp;{{x}}:</div>
+        <input type="text" name="kisyu{{ x }}" size="20" value="" >
+      </div>
+
+    {% endfor %}
+  </div>
+   <div>
+    <input type="hidden" name="kusei_nen" value= "{{ data_kusei[0] }}">
+    <input type="hidden" name="kusei_tuki" value= "{{ data_kusei[1] }}">
+     <input type="hidden" name="kusei_hi" value= "{{ data_kusei[2] }}">
+
+   </div>
+  <div class="btn_submit">
+    <button type="submit" class="btn btn-primary">送信</button>
+  </div>
+</form>
+<script type="text/javascript">
+  hantei();
+</script>
+{% endblock %}
