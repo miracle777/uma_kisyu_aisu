@@ -52,7 +52,7 @@ def kakusu_select():
         data_kusei.append(kusei_tuki)
         data_kusei.append(kusei_hi)
 
-        print(data_kusei)
+     
 
         if seletc_form_id == "kisyu":
             return render_template("kisyu_form.html",data_kusei = data_kusei)
