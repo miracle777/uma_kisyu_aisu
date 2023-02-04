@@ -4,10 +4,12 @@
 table {
   border-collapse: collapse;
   border-spacing: 0;
-  width: auto;
+  width: 100%;
   border: 1px solid #ddd;
 
   text-align: center;
+  margin-left: auto;
+  margin-left: auto;
 }
 
 .form-select {
